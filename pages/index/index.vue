@@ -130,4 +130,17 @@
 			padding: 20rpx 0;
 		}
 	}
+	.nodata {
+		display: flex;
+		justify-content: center;
+		image{
+			width: 360rpx;
+		}
+	}
+	.loading {
+		text-align: center;
+		font-size: 26rpx;
+		color:#888;
+		line-height: 2em;
+	}
 </style>

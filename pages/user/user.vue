@@ -10,15 +10,21 @@
 	export default {
 		data() {
 			return {
-				
+				listArr: []
 			};
 		},
+		// onLoad() {
+		// 	this.getHistory()
+		// }
 		methods: {
-			goDetail() {
+			goDetail(item) {
 				uni.navigateTo({
-					url: "/pages/detail/detail"
+					url: `/pages/detail/detail?cid=${item.classid}&id=${item.id}`
 				})
-			}
+			},
+			// getHistory() {
+			// 	let hisArr = uni.getStorageSync(("his"))
+			// }
 		}
 	}
 </script>
