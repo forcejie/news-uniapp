@@ -1,7 +1,12 @@
 <template>
 	<view class="user">
 		<view>
-			<newbox @click.native="goDetail()"></newbox>
+			<view class="row" v-for="item in listArr" :key="item.id">
+				<newbox @click.native="goDetail(item)" :item="item"></newbox>
+			</view>
+		</view>
+		<view v-if="!listArr.length">
+			<view>没有数据啦</view>
 		</view>
 	</view>
 </template>
@@ -13,18 +18,20 @@
 				listArr: []
 			};
 		},
-		// onLoad() {
-		// 	this.getHistory()
-		// }
+		onShow() {
+			this.getHistory()
+		},
 		methods: {
 			goDetail(item) {
 				uni.navigateTo({
 					url: `/pages/detail/detail?cid=${item.classid}&id=${item.id}`
 				})
 			},
-			// getHistory() {
-			// 	let hisArr = uni.getStorageSync(("his"))
-			// }
+			getHistory() {
+				let hisArr = uni.getStorageSync("historyArr") || []
+				this.listArr=hisArr
+				console.log(this.listArr)
+			}
 		}
 	}
 </script>

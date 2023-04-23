@@ -124,7 +124,7 @@
 	}
 	.content {
 		padding: 30rpx;
-		padding-top: 130rpx;
+		padding-top: 50rpx;
 		.row {
 			border-bottom: 1px dotted #DDDDDD;
 			padding: 20rpx 0;
